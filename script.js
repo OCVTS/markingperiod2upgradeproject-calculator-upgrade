@@ -56,3 +56,12 @@ function appendValue(value) {
   result += value;
   display.value = result; // Update the display
 }
+
+
+//Project Addons
+
+//Backspace
+function backspace() {
+  result = result.slice(0, -1); // I got this code from Chat GPT. I did more reseach on this code and I figured out how it works.
+  document.getElementById('result').value = result;
+}
