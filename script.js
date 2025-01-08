@@ -65,3 +65,5 @@ function backspace() {
   result = result.slice(0, -1); // I got this code from Chat GPT. I did more reseach on this code and I figured out how it works.
   document.getElementById('result').value = result;
 }
+
+//Keyboard Typing is on another js file
