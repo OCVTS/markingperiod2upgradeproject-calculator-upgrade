@@ -8,6 +8,10 @@ function clearResult() {
 
 /********************** calculate function *********************/
 function calculate() {
+  if (result.indexOf('π') >= 0) {
+    let piLocation = result.indexOf('π');
+    result[piLocation] = math.pi
+  }
   const display = document.getElementById('result');
 
   // Check if the input matches two numbers and one operator
@@ -19,7 +23,7 @@ function calculate() {
   }
 
   const num1 = parts[0]; //num1
-  const operator = parts[1]; // 
+  const operator = parts[1]; // operator
   const num2 = parts[2]; //num2
 
 
@@ -55,6 +59,7 @@ function appendValue(value) {
   const display = document.getElementById('result');
   result += value;
   display.value = result; // Update the display
+  console.log(result.indexOf('π'))
 }
 
 
@@ -67,3 +72,10 @@ function backspace() {
 }
 
 //Keyboard Typing is on another js file
+
+
+//Pi
+function Pi(pi) {
+  console.log
+    
+}
