@@ -144,3 +144,10 @@ document.addEventListener("keydown", function(event) {
     calculate();
   }
 });
+
+// negative
+document.addEventListener("keydown", function(event) {
+  if (event.key === "_") {
+    negative();
+  }
+});

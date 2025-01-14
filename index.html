@@ -34,14 +34,27 @@
 
   <!-- Addons -->
 
-<!-- Decimal-->
+  <!-- Decimal-->
   <button onclick="appendValue('.')">.</button> 
 
-<!-- Backspace -->
+  <!-- Backspace -->
   <button onclick="backspace()"><i class="fa-solid fa-delete-left"></i></button>
 
   <!-- Pi -->
   <button onclick="appendValue('π')">π</button> 
+  
+  <!-- Negative Numbers -->
+  <button onclick="negative()">+/-</button>
+
+  <!-- parentheses -->
+  <button onclick="appendValue('&lpar;')">&lpar;</button> 
+  <button onclick="appendValue('&rpar;')">&rpar;</button> 
+
+  <!-- Square Root -->
+  <button onclick="appendValue('√')">√</button> 
+
+  <!-- Date -->
+  <button id="dateButton">Date</button>
 
 </div>
     <script src="script.js"></script>

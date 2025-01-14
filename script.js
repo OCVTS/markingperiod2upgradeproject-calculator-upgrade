@@ -8,49 +8,18 @@ function clearResult() {
 
 /********************** calculate function *********************/
 function calculate() {
+
+  const display = document.getElementById('result');
+  
+  //pi function addon
   if (result.indexOf('π') >= 0) { 
     result = result.replace('π', Math.PI);
 }
-  const display = document.getElementById('result');
+const calculatedValue = eval(result);
 
-  // Check if the input matches two numbers and one operator
-  const parts = result.split(/([+\-*/])/); // Split into num1, operator, num2
-  if (parts.length !== 3) {
-    display.value = 'Error'; // Show error if the input is invalid
-    result = ''; // Reset the result
-    return;
-  }
-
-  const num1 = parts[0]; //num1
-  const operator = parts[1]; // operator
-  const num2 = parts[2]; //num2
-
-
-  if (isNaN(num1) || isNaN(num2)) {
-    display.value = 'Error'; // Show error if numbers are invalid
-    result = ''; // Reset the result
-    return;
-  }
-
-  //Adding subtracting multiplying dividing
-  let calculatedValue = 0;
-  if (operator === '+') {
-    calculatedValue = Number(num1) + Number(num2);
-  } else if (operator === '-') {
-    calculatedValue = Number(num1) - Number(num2);
-  } else if (operator === '*') {
-    calculatedValue = Number(num1) * Number(num2);
-  } else if (operator === '/') {
-    if (Number(num2) === 0) {
-      display.value = 'Cannot divide by zero';
-      result = ''; // Reset the result
-      return;
-    }
-    calculatedValue = Number(num1) / Number(num2);
-  }
-
-  result = calculatedValue.toString(); // Store the result
-  display.value = calculatedValue; // Update the display
+// Display the result, or "Error" if invalid
+display.value = isNaN(calculatedValue) ? 'Error' : calculatedValue;
+result = isNaN(calculatedValue) ? '' : calculatedValue.toString(); // Reset if invalid
 }
 
 /********************** append value function *********************/
@@ -58,9 +27,7 @@ function appendValue(value) {
   const display = document.getElementById('result');
   result += value;
   display.value = result; // Update the display
-  console.log(result.indexOf('π'))
 }
-
 
 //Project Addons
 
@@ -76,4 +43,48 @@ function backspace() {
 //Pi is at lines 11-13
 
 
-// parentheses
+// Negative Numbers
+function negative() {
+  const display = document.getElementById('result');
+
+  // If the input is empty, start with a negative sign.
+  if (!result) {
+    result = "-";
+  } else {
+    const lastChar = result[result.length - 1];
+
+    // Adds a - if it ends in a operator
+    if (['+', '-', '*', '/'].includes(lastChar)) {
+      result += '-';
+    } else {
+      // Otherwise, toggle the negative sign of the last number
+      const numberMatch = result.match(/(\d+\.?\d*)$/);
+      if (numberMatch) {
+        const number = numberMatch[1];
+        result = result.slice(0, -number.length) + (number.startsWith('-') ? number.slice(1) : '-' + number);
+      }
+    }
+  }
+}
+  display.value = result; // Update the display
+
+//Square Root
+
+
+//date
+const button = document.getElementById('dateButton');
+const display = document.getElementById('result');
+
+button.addEventListener('click', function() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;  // W3 Schools says that you have to add 1 because they are based at 0 
+    const day = today.getDate();
+
+    // Month / Day / Year
+    const formattedDate = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-${year}`;
+  
+    display.value = formattedDate;
+
+    alert(formattedDate)
+});
