@@ -47,7 +47,7 @@ function backspace() {
 function negative() {
   const display = document.getElementById('result');
 
-  // If the input is empty, start with a negative sign.
+  //Starts with a - if the result area is empty
   if (!result) {
     result = "-";
   } else {
@@ -57,7 +57,7 @@ function negative() {
     if (['+', '-', '*', '/'].includes(lastChar)) {
       result += '-';
     } else {
-      // Otherwise, toggle the negative sign of the last number
+      //Adds the negative on the last number
       const numberMatch = result.match(/(\d+\.?\d*)$/);
       if (numberMatch) {
         const number = numberMatch[1];
@@ -72,19 +72,16 @@ function negative() {
 
 
 //date
-const button = document.getElementById('dateButton');
-const display = document.getElementById('result');
+function showDate() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;  //W3 schools adds 1 because the month is based on 0
+  const day = today.getDate();
 
-button.addEventListener('click', function() {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;  // W3 Schools says that you have to add 1 because they are based at 0 
-    const day = today.getDate();
+  //Format date Month / Day / Year
+  const formattedDate = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-${year}`;
 
-    // Month / Day / Year
-    const formattedDate = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-${year}`;
-  
-    display.value = formattedDate;
+  //Puts the date in the result area
+  document.getElementById('result').value = formattedDate;
 
-    alert(formattedDate)
-});
+}

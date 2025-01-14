@@ -103,13 +103,6 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
-//enter
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-    calculate();
-  }
-});
-
 //backspace
 document.addEventListener("keydown", function(event) {
   if (event.key === "Backspace") {
@@ -149,5 +142,12 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("keydown", function(event) {
   if (event.key === "_") {
     negative();
+  }
+});
+
+//enter
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    calculate();
   }
 });
