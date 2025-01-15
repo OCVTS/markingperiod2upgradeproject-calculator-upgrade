@@ -151,3 +151,11 @@ document.addEventListener("keydown", function(event) {
     calculate();
   }
 });
+
+//pi
+document.addEventListener("keydown", function(event) {
+  if (event.key ==='i' && 'p') {
+    appendValue('π');
+  }
+});
+

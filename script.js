@@ -8,18 +8,28 @@ function clearResult() {
 
 /********************** calculate function *********************/
 function calculate() {
-
   const display = document.getElementById('result');
-  
-  //pi function addon
-  if (result.indexOf('π') >= 0) { 
-    result = result.replace('π', Math.PI);
-}
-const calculatedValue = eval(result);
 
-// Display the result, or "Error" if invalid
-display.value = isNaN(calculatedValue) ? 'Error' : calculatedValue;
-result = isNaN(calculatedValue) ? '' : calculatedValue.toString(); // Reset if invalid
+  //pi addon
+  if (result.indexOf('π') >= 0) {
+    result = result.replace('π', Math.PI); //Replaces π with math.pi
+  }
+
+  // square root addon
+  if (result.indexOf('√') >= 0) {
+    result = result.replace(/√([\d\.]+)/g, 'Math.sqrt($1)'); // Replaces √ with Math.sqrt
+  }
+
+  try {
+    const calculatedValue = eval(result);
+
+    // Display the result
+    display.value = isNaN(calculatedValue) ? 'Error' : calculatedValue;
+    result = isNaN(calculatedValue) ? '' : calculatedValue.toString();
+  } catch (e) {
+    display.value = 'Error';  
+    result = ''; //Reset the result
+  }
 }
 
 /********************** append value function *********************/
@@ -36,12 +46,6 @@ function backspace() {
   result = result.slice(0, -1); // I got this code from Chat GPT. I did more reseach on this code and I figured out how it works.
   document.getElementById('result').value = result;
 }
-
-//Keyboard Typing is on another js file
-
-
-//Pi is at lines 11-13
-
 
 // Negative Numbers
 function negative() {
@@ -62,10 +66,8 @@ function negative() {
       if (numberMatch) {
         const number = numberMatch[1];
         result = result.slice(0, -number.length) + (number.startsWith('-') ? number.slice(1) : '-' + number);
-      }
-    }
-  }
-}
+      }}}}
+      
   display.value = result; // Update the display
 
 //Square Root
@@ -79,9 +81,14 @@ function showDate() {
   const day = today.getDate();
 
   //Format date Month / Day / Year
-  const formattedDate = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-${year}`;
+  const formattedDate = `${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}/${year}`;
 
   //Puts the date in the result area
   document.getElementById('result').value = formattedDate;
 
 }
+
+//Keyboard Typing is on another js file
+
+
+//Pi is at lines 11-13
