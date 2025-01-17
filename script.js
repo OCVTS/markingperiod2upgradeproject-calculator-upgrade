@@ -20,6 +20,22 @@ function calculate() {
     result = result.replace(/√([\d\.]+)/g, 'Math.sqrt($1)'); // Replaces √ with Math.sqrt
   }
 
+  //exponent addon
+  if (result.indexOf('^') >= 0) {
+    result = result.replace ('^', '**') // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in javascript ** does exponents
+  }
+
+//hidden button
+
+// Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script 
+if (result.indexOf("244") !== -1) {
+    //Shows the button when the code is unlocked
+    document.getElementById("sec").style.display = "block";
+
+    const car = {type:"Me", model:"500", color:"white"}; //Got this from w3 schools from the object part of it. so i belive it is a object
+    document.getElementById("sec").innerHTML = `<a href="https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt">Click ${car.type}</a>`;
+    }
+
   try {
     const calculatedValue = eval(result);
 
@@ -70,9 +86,6 @@ function negative() {
       
   display.value = result; // Update the display
 
-//Square Root
-
-
 //date
 function showDate() {
   const today = new Date();
@@ -88,7 +101,16 @@ function showDate() {
 
 }
 
+//Parentheses
+
+
 //Keyboard Typing is on another js file
 
 
 //Pi is at lines 11-13
+
+
+//Square Root is done in the calculate file, lines 18-21
+
+
+//Exponents is done at lines 23-26
