@@ -25,16 +25,33 @@ function calculate() {
     result = result.replace ('^', '**') // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in javascript ** does exponents
   }
 
+  // absolute value addon
+  if (result.indexOf('|') >= 0) {
+    // Regular expression to find content between absolute value bars
+    result = result.replace(/\|([^|]+)\|/g, (match, inside) => { //the symbols in the replace string i got from chat gpt because i could not find out exactly how to do it from w3 schools
+        return `Math.abs(${inside})`; // Replace with Math.abs()
+    });
+}
+
 //hidden button
 
-// Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script 
+// Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script
 if (result.indexOf("244") !== -1) {
     //Shows the button when the code is unlocked
     document.getElementById("sec").style.display = "block";
 
-    const car = {type:"Me", model:"500", color:"white"}; //Got this from w3 schools from the object part of it. so i belive it is a object
-    document.getElementById("sec").innerHTML = `<a href="https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt">Click ${car.type}</a>`;
-    }
+  //both of the objects and arrays i got from w3 schools so the array and cars have car related things in them
+
+    //object "me"
+    const car = {type:"Me", model:"500", color:"white"};
+    
+    //array "click"
+    const cars = [];
+    cars[0]= "Click";
+    cars[1]= "Volvo";
+    cars[2]= "BMW";
+    document.getElementById("sec").innerHTML = `<a href="https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt" target="_blank">${cars[0]} ${car.type}</a>`;
+    } 
 
   try {
     const calculatedValue = eval(result);

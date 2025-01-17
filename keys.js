@@ -159,3 +159,9 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
+//pi
+document.addEventListener("keydown", function(event) {
+  if (event.key === "|") {
+    appendValue('|');
+  }
+});
