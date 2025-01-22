@@ -159,7 +159,7 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
-//pi
+//absolute value
 document.addEventListener("keydown", function(event) {
   if (event.key === "|") {
     appendValue('|');

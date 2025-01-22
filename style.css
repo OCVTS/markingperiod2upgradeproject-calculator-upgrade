@@ -15,7 +15,7 @@ p, button {
 /* Calculator Container */
 .calculator {
   width: 500px;
-  background-color: #fff;
+  background-color: #80868b;
   border-radius: 10px;
   box-shadow: 0 4px 8px #00000033;
   padding: 20px;
@@ -33,7 +33,15 @@ p, button {
   border: 2px solid black;
   border-radius: 5px;
   box-sizing: border-box;
-  background-color: white;
+  background-color: rgb(223, 234, 247);
+  color: black;
+  @font-face {
+
+    font-family: 'MyCustomFont';
+
+    src: url('path/to/your/font.ttf');
+
+}
 }
 
 /* Equals Button */
@@ -64,21 +72,20 @@ p, button {
 button {
   height: 45px;
   font-size: 1rem;
-  border: 2px solid #000000;
   border-radius: 5px;
-  background-color: #fff;
-  color: #000;
+  background-color: #383a3b;
+  color: #ffffff;
   cursor: pointer;
   transition: 0.3s ease;
   font-weight: bold;
+  border: none;
 }
 
 /* Hover Effects for Buttons */
 button:hover {
-  background-color: #f1f1f1;
+  background-color: #303035;
   transform: scale(1.1);
 }
-
 
 /* Clear Button */
 #clear {
@@ -101,6 +108,10 @@ button:hover {
 #backspace:hover {
   background-color: #e72121;
   color: black;
+}
+/* Num buttons only */
+.number {
+  background-color: #142F44 !important;
 }
 
 /* Secret */
