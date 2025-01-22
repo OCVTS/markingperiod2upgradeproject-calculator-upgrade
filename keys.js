@@ -165,3 +165,17 @@ document.addEventListener("keydown", function(event) {
     appendValue('|');
   }
 });
+
+// open parentheses
+document.addEventListener("keydown", function(event) {
+  if (event.key === "(") {
+    appendValue('(');
+  }
+});
+
+// close parentheses
+document.addEventListener("keydown", function(event) {
+  if (event.key === ")") {
+    appendValue(')');
+  }
+});

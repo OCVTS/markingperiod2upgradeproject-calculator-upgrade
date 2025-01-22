@@ -12,7 +12,7 @@ function calculate() {
 
   //pi addon
   if (result.indexOf('π') >= 0) {
-    result = result.replace('π', Math.PI); //Replaces π with math.pi
+    result = result.replace('π', Math.PI); //Replaces π with Math.PI
   }
 
   // square root addon
@@ -22,48 +22,59 @@ function calculate() {
 
   //exponent addon
   if (result.indexOf('^') >= 0) {
-    result = result.replace ('^', '**') // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in javascript ** does exponents
+    result = result.replace('^', '**'); // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in JavaScript ** does exponents
   }
 
   // absolute value addon
   if (result.indexOf('|') >= 0) {
     // Regular expression to find content between absolute value bars
     result = result.replace(/\|([^|]+)\|/g, (match, inside) => { //the symbols in the replace string i got from chat gpt because i could not find out exactly how to do it from w3 schools
-        return `Math.abs(${inside})`; // Replace with Math.abs()
+      return `Math.abs(${inside})`; // Replace with Math.abs()
     });
-}
+  }
 
-//hidden button
-
-// Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script
-if (result.indexOf("244") !== -1) {
+  //hidden button
+  // Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script
+  if (result.indexOf("244") !== -1) {
     //Shows the button when the code is unlocked
     document.getElementById("sec").style.display = "block";
 
-  //both of the objects and arrays i got from w3 schools so the array and cars have car related things in them
+    //both of the objects and arrays I got from w3 schools so the array and cars have car-related things in them
 
     //object "me"
-    const car = {type:"Me", model:"500", color:"white"};
-    
+    const car = { type: "Me", model: "500", color: "white" };
+
     //array "click"
     const cars = [];
-    cars[0]= "Click";
-    cars[1]= "Volvo";
-    cars[2]= "BMW";
-    document.getElementById("sec").innerHTML = `<a href="https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt" target="_blank">${cars[0]} ${car.type}</a>`;
-    } 
+    cars[0] = "Click";
+    cars[1] = "Volvo";
+    cars[2] = "BMW";
+
+    //loop
+    const cars2 = ["!", "!", "!"];
+    let cars2String = '';
+    for (let i = 0; i < cars2.length; i++) {
+      cars2String += cars2[i]; 
+    }
+    document.getElementById("sec").innerHTML = `
+      <a href="https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt" target="_blank">
+        ${cars[0]} ${car.type}${cars2String}
+      </a>`;
+  }
 
   try {
-    const calculatedValue = eval(result);
+    // Evaluate the mathematical expression
+    const calculatedValue = eval(result); // eval processes parentheses and other math expressions
 
     // Display the result
-    display.value = isNaN(calculatedValue) ? 'Error' : calculatedValue;
-    result = isNaN(calculatedValue) ? '' : calculatedValue.toString();
+    display.value = isNaN(calculatedValue) || !isFinite(calculatedValue) ? 'Error' : calculatedValue;
+    result = isNaN(calculatedValue) || !isFinite(calculatedValue) ? '' : calculatedValue.toString();
   } catch (e) {
-    display.value = 'Error';  
-    result = ''; //Reset the result
+    display.value = 'Error'; // Handle invalid input or syntax errors
+    result = ''; // Reset the result
   }
 }
+
 
 /********************** append value function *********************/
 function appendValue(value) {
@@ -93,13 +104,9 @@ function negative() {
     // Adds a - if it ends in a operator
     if (['+', '-', '*', '/'].includes(lastChar)) {
       result += '-';
-    } else {
-      //Adds the negative on the last number
-      const numberMatch = result.match(/(\d+\.?\d*)$/);
-      if (numberMatch) {
-        const number = numberMatch[1];
-        result = result.slice(0, -number.length) + (number.startsWith('-') ? number.slice(1) : '-' + number);
-      }}}}
+    }
+  }
+}
       
   display.value = result; // Update the display
 
@@ -119,7 +126,12 @@ function showDate() {
 }
 
 //Parentheses
-
+if (result.indexOf('()') >= 0) {
+  // Regular expression to find content between absolute value bars
+  result = result.replace(/\|([^|]+)\|/g, (match, inside) => { //the symbols in the replace string i got from chat gpt because i could not find out exactly how to do it from w3 schools
+      return `Math.abs(${inside})`; // Replace with Math.abs()
+  });
+}
 
 //Keyboard Typing is on another js file
 
