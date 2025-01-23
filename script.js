@@ -122,7 +122,7 @@ function showDate() {
 
   //Puts the date in the result area
   document.getElementById('result').value = formattedDate;
-
+  
 }
 
 //Parentheses
