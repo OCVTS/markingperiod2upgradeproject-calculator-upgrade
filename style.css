@@ -35,13 +35,6 @@ p, button {
   box-sizing: border-box;
   background-color: rgb(223, 234, 247);
   color: black;
-  @font-face {
-
-    font-family: 'MyCustomFont';
-
-    src: url('path/to/your/font.ttf');
-
-}
 }
 
 /* Equals Button */
@@ -111,7 +104,7 @@ button:hover {
 }
 /* Num buttons only */
 .number {
-  background-color: #142F44 !important;
+  background-color: #142F44;
 }
 
 /* Secret */
