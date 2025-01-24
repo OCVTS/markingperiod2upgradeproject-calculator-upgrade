@@ -111,12 +111,12 @@ button:hover {
 #sec {
   display: none;
   text-align: center;
-  background-color: #beb8b8;
+  background-color: #979393;
   padding: 20px;
   margin-top: 20px;
-  border: 2px solid #ddd;
+  border: 2px solid #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 1.2rem;
-  color: #333333;
+  color: #000000;
 }
