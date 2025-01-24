@@ -62,19 +62,17 @@ function calculate() {
       </a>`;
   }
 
-  try {
-    // Evaluate the mathematical expression
-    const calculatedValue = eval(result); // eval processes parentheses and other math expressions
+const calculatedValue = eval(result); 
 
-    // Display the result
-    display.value = isNaN(calculatedValue) || !isFinite(calculatedValue) ? 'Error' : calculatedValue;
-    result = isNaN(calculatedValue) || !isFinite(calculatedValue) ? '' : calculatedValue.toString();
-  } catch (e) {
-    display.value = 'Error'; // Handle invalid input or syntax errors
+  // Check if the result is a number
+  if (isNaN(calculatedValue)) {
+    display.value = 'Error'; // If the result is not a valid number, show 'Error'
     result = ''; // Reset the result
+  } else {
+    display.value = calculatedValue; // If valid, display the result
+    result = calculatedValue.toString(); // Update the result variable with the new value
   }
 }
-
 
 /********************** append value function *********************/
 function appendValue(value) {
