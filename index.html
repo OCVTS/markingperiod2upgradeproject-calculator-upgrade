@@ -16,6 +16,7 @@
   <div class="calculator">
   <input  type="text" id="result" disabled>
     <div class="buttons">
+      <button onclick="appendValue('<')">&lt</button>
       <button onclick="appendValue('(')">(</button>
       <button onclick="appendValue(')')">)</button>
       <button onclick="appendValue('7')" class="number">7</button>
@@ -24,6 +25,7 @@
       <button onclick="appendValue('+')">+</button>
       <button onclick="clearResult()" id="clear">Clear</button>
 
+      <button onclick="appendValue('>')">></button>
       <button onclick="appendValue('√')">√</button> 
       <button onclick="appendValue('^')">^</button> 
       <button onclick="appendValue('4')" class="number">4</button>
@@ -32,6 +34,7 @@
       <button onclick="appendValue('-')">-</button>
       <button onclick="backspace()" id="backspace"><i class="fa-solid fa-delete-left"></i></button>
 
+      <button onclick="appendValue('²')">²</button>
       <button onclick="appendValue('%')">%</button> 
       <button onclick="appendValue('π')">π</button> 
       <button onclick="appendValue('1')" class="number">1</button>
@@ -39,7 +42,8 @@
       <button onclick="appendValue('3')" class="number">3</button>
       <button onclick="appendValue('*')">*</button>
       <button onclick="calculate()" id="equal">=</button>
-
+      
+      <button onclick="appendValue('³')">³</button>
       <button onclick="showDate()">Date</button>
       <button onclick="appendValue('|')">|</button> 
       <button onclick="appendValue('.')">.</button> 
@@ -48,6 +52,11 @@
       <button onclick="appendValue('/')">/</button>
 
 
+
+      
+      
+    
+      
   <!-- Buttons added -->
 
   <!-- Decimal-->
@@ -65,7 +74,7 @@
 </div>
 
 <div id="sec">
-
+<!-- secret (type 244 in calculator) -->
 </div>
     <script src="script.js"></script>
     <script src="keys.js"></script>

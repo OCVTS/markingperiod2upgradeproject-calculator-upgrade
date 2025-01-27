@@ -4,6 +4,7 @@ let result = ''; // Starts off blank
 function clearResult() {
   result = ''; // Reset the input
   document.getElementById('result').value = ''; // Clears the result
+  document.getElementById("sec").style.display = "none";
 }
 
 /********************** calculate function *********************/
@@ -33,6 +34,16 @@ function calculate() {
     });
   }
 
+ //² addon
+ if (result.indexOf('²') >= 0) {
+  result = result.replace('²', '**2'); // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in JavaScript ** does exponents
+}
+
+//³ addon
+if (result.indexOf('³') >= 0) {
+  result = result.replace('³', '**3'); // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in JavaScript ** does exponents
+}
+
   //hidden button
   // Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script
   if (result.indexOf("244") !== -1) {
@@ -60,6 +71,16 @@ function calculate() {
       <a href="https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt" target="_blank">
         ${cars[0]} ${car.type}${cars2String}
       </a>`;
+  }
+
+//divide by 0 adding error
+  if (result.indexOf('/') >= 0) {
+    const divCheck = result.split('/');
+    // checks for 0 in the equation
+    if (divCheck[1] === '0') {
+      display.value = 'Cannot Divide By 0'; //error message
+      result = '';
+    }
   }
 
 const calculatedValue = eval(result); 
