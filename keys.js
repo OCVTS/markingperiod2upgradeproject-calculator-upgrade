@@ -186,3 +186,17 @@ document.addEventListener("keydown", function(event) {
     appendValue('^');
   }
 });
+
+//<
+document.addEventListener("keydown", function(event) {
+  if (event.key === "<") {
+    appendValue('<');
+  }
+});
+
+//>
+document.addEventListener("keydown", function(event) {
+  if (event.key === ">") {
+    appendValue('>');
+  }
+});
