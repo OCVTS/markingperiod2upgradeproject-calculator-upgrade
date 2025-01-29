@@ -36,12 +36,12 @@ function calculate() {
 
  //² addon
  if (result.indexOf('²') >= 0) {
-  result = result.replace('²', '**2'); // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in JavaScript ** does exponents
+  result = result.replace('²', '**2'); // Replaces the ² with **2
 }
 
 //³ addon
 if (result.indexOf('³') >= 0) {
-  result = result.replace('³', '**3'); // Replaces the ^ with **, still keeps the ^ in the result and in the equation, in JavaScript ** does exponents
+  result = result.replace('³', '**3'); // Replaces the ³ with **3
 }
 
   //hidden button
