@@ -45,7 +45,7 @@ if (result.indexOf('³') >= 0) {
 }
 
   //hidden button
-  // Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script
+  // Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script (changed to rickroll keeping the same number bc i remember it)
   if (result.indexOf("244") !== -1) {
     //Shows the button when the code is unlocked
     document.getElementById("sec").style.display = "block";
@@ -68,7 +68,7 @@ if (result.indexOf('³') >= 0) {
       cars2String += cars2[i]; 
     }
     document.getElementById("sec").innerHTML = `
-      <a href="https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt" target="_blank">
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
         ${cars[0]} ${car.type}${cars2String}
       </a>`;
   }
