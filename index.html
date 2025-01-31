@@ -3,76 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>Calculator</title>
+  <title>Calculator Landing Page</title>
+  <link href="landing.css" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/x-icon" href="icon.png">
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="https://kit.fontawesome.com/377e2797db.js" crossorigin="anonymous"></script> <!-- Backspace Arrow -->
   <!-- Fonts -->
+
+  <!-- Header Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <div class="calculator">
-  <input type="text" id="result" disabled>
-    <div class="buttons">
-      <button onclick="appendValue('<')">&lt</button>
-      <button onclick="appendValue('(')">(</button>
-      <button onclick="appendValue(')')">)</button>
-      <button onclick="appendValue('7')" class="number">7</button>
-      <button onclick="appendValue('8')" class="number">8</button>
-      <button onclick="appendValue('9')" class="number">9</button>
-      <button onclick="appendValue('+')">+</button>
-      <button onclick="clearResult()" id="clear">Clear</button>
-
-      <button onclick="appendValue('>')">></button>
-      <button onclick="appendValue('√')">√</button> 
-      <button onclick="appendValue('^')">^</button> 
-      <button onclick="appendValue('4')" class="number">4</button>
-      <button onclick="appendValue('5')" class="number">5</button>
-      <button onclick="appendValue('6')" class="number">6</button>
-      <button onclick="appendValue('-')">-</button>
-      <button onclick="backspace()" id="backspace"><i class="fa-solid fa-delete-left"></i></button>
-
-      <button onclick="appendValue('²')">²</button>
-      <button onclick="appendValue('%')">%</button> 
-      <button onclick="appendValue('π')">π</button> 
-      <button onclick="appendValue('1')" class="number">1</button>
-      <button onclick="appendValue('2')" class="number">2</button>
-      <button onclick="appendValue('3')" class="number">3</button>
-      <button onclick="appendValue('*')">*</button>
-      <button onclick="calculate()" id="equal">=</button>
-      
-      <button onclick="appendValue('³')">³</button>
-      <button onclick="showDate()">Date</button>
-      <button onclick="appendValue('|')">|</button> 
-      <button onclick="appendValue('.')">.</button> 
-      <button onclick="appendValue('0')" class="number">0</button>
-      <button onclick="negative()">+/-</button>
-      <button onclick="appendValue('/')">/</button>
-    
-      
-  <!-- Buttons added -->
-
-  <!-- Decimal-->
-  <!-- Backspace -->
-  <!-- Pi -->
-  <!-- Negative Numbers -->
-  <!-- parentheses -->
-  <!-- Square Root -->
-  <!-- Date -->
-  <!-- Exponents -->
-  <!-- Absolute Value -->
-  <!-- Precentage -->
-
+<header><h1>Calculator Upgrade</h1></header>
+<div id="grid">
+<div id="desc">
+<p> I wanted to upgrade my calculator because I enjoyed working on this project and had many ideas. I wanted a calculator that looked good but also functioned properly.
+    My goal was to make the functionality better and add new features that would work well with my calculator. I tried out different colors, and layouts, aiming for
+    a simplistic look that matched what I wanted. I also wanted to add advanced functions that would make sense on a scientific calculator.</p>
+</div>
+<div id="list">
+    <h2>All of my calculators functions</h2>
+<ul>
+    <li>Addition</li>
+    <li>Subtraction</li>
+    <li>Multiplication</li>
+    <li>Division</li>
+    <li>Exponents</li>
+    <li>Square Roots</li>
+    <li>Percentages</li>
+    <li>Parentheses</li>
+    <li>Pi</li>
+    <li>Decimals</li>
+    <li>Negative Numbers</li>
+    <li>Absolute Value</li>
+    <li>Date</li>
+    <li>Secret</li>
+    <li>Clear</li>
+    <li>Backspace</li>
+    <li>Keyboard Compatibility</li>
+</ul>
 </div>
 </div>
-
-<div id="sec">
-<!-- secret (type 244 in calculator) -->
+<div id="btm">
+<p> When I created this calculator, I struggled the most with adding parentheses. I could not figure out how to implement them properly. My main issue was that I
+    kept bouncing around, trying to manage multiple tasks at once. I remember one time I was trying to understand Pi, keyboard functionality, and my backspace button
+    all simultaneously. I kept getting distracted and worked on other functions when I had one nearly complete. I had to improve the calculation function because the 
+    original code couldn't handle multiple operators, and doing so helped a lot. After all, it made it somewhat easier to code other new functions.</p>
 </div>
-    <script src="script.js"></script>
-    <script src="keys.js"></script>
+
+    <div id="image">
+    <a href="project.html"><img src="calc.PNG"></a>
+</div>
+    <footer>&copy 2025 Kenshin Frangos</footer>
     
 </body>
 </html>

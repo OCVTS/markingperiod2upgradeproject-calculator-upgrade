@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Calculator</title>
+  <link rel="icon" type="image/x-icon" href="icon.png">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/377e2797db.js" crossorigin="anonymous"></script> <!-- Backspace Arrow -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="calculator">
+  <input type="text" id="result" disabled>
+    <div class="buttons">
+      <button onclick="appendValue('<')">&lt</button>
+      <button onclick="appendValue('(')">(</button>
+      <button onclick="appendValue(')')">)</button>
+      <button onclick="appendValue('7')" class="number">7</button>
+      <button onclick="appendValue('8')" class="number">8</button>
+      <button onclick="appendValue('9')" class="number">9</button>
+      <button onclick="appendValue('+')">+</button>
+      <button onclick="clearResult()" id="clear">Clear</button>
+
+      <button onclick="appendValue('>')">></button>
+      <button onclick="appendValue('√')">√</button> 
+      <button onclick="appendValue('^')">^</button> 
+      <button onclick="appendValue('4')" class="number">4</button>
+      <button onclick="appendValue('5')" class="number">5</button>
+      <button onclick="appendValue('6')" class="number">6</button>
+      <button onclick="appendValue('-')">-</button>
+      <button onclick="backspace()" id="backspace"><i class="fa-solid fa-delete-left"></i></button>
+
+      <button onclick="appendValue('²')">²</button>
+      <button onclick="appendValue('%')">%</button> 
+      <button onclick="appendValue('π')">π</button> 
+      <button onclick="appendValue('1')" class="number">1</button>
+      <button onclick="appendValue('2')" class="number">2</button>
+      <button onclick="appendValue('3')" class="number">3</button>
+      <button onclick="appendValue('*')">*</button>
+      <button onclick="calculate()" id="equal">=</button>
+      
+      <button onclick="appendValue('³')">³</button>
+      <button onclick="showDate()">Date</button>
+      <button onclick="appendValue('|')">|</button> 
+      <button onclick="appendValue('.')">.</button> 
+      <button onclick="appendValue('0')" class="number">0</button>
+      <button onclick="negative()">+/-</button>
+      <button onclick="appendValue('/')">/</button>
+    
+      
+  <!-- Buttons added -->
+
+  <!-- Decimal-->
+  <!-- Backspace -->
+  <!-- Pi -->
+  <!-- Negative Numbers -->
+  <!-- parentheses -->
+  <!-- Square Root -->
+  <!-- Date -->
+  <!-- Exponents -->
+  <!-- Absolute Value -->
+  <!-- Precentage -->
+
+</div>
+</div>
+
+<div id="sec">
+<!-- secret (type 244 in calculator) -->
+</div>
+    <script src="script.js"></script>
+    <script src="keys.js"></script>
+    
+</body>
+</html>
