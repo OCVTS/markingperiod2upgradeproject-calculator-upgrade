@@ -4,11 +4,20 @@
 }
 
 header {
-    padding: 45px;
+    padding: 40px;
     text-align: center;
     background-color: #383A3B;
     font-family: Rubik, Courier, monospace;
     text-decoration: none;
+    font-size: 40px;
+}
+
+header h1 {
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.1);
 }
 
 #grid {
@@ -25,46 +34,91 @@ body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif ;
 }
-#desc {
-    text-align: center;
-    padding: 20px;
+
+#desc, #btm {
+    padding: 50px;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 1000px;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    transition: transform 0.5s ease;
+    z-index: 1;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+#desc p, #btm p {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+#desc:hover, #btm:hover {
+    transform: scale(1.05); 
 }
 
 #image {
     display: flex;
     justify-content: center;
-}
-
-img:hover{
-    transform: scale(1.1);
+    position: relative; /* Keeps the image centered */
+    overflow: hidden; /* Prevents the container from showing a scrollbar */
 }
 
 img {
     transition: transform 0.5s ease;
+    max-width: 100%; /* Ensures the image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes any space below the image */
 }
+
+img:hover {
+    transform: scale(1.1); /* Scales the image on hover */
+}
+
 
 #list {
-    margin-left: 40%;
+    padding: 50px;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 1000px;
+    font-family: 'Arial', sans-serif;
+    text-align: right;
+    z-index: 1;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: bold;
+    margin-right: 0;
+    transition: transform 0.5s ease;
+    overflow-x: hidden;
 }
 
-#btm {
-    text-align: center;
-    padding: 15%;
-    padding-bottom: 40px;
-    padding-top: 40px;
+#list ul {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    list-style: none; 
+    text-align: left;
 }
 
-#list h2 {
-    margin-left: -20%;
-    padding: 20px;
+#list:hover {
+    transform: scale(1.05); 
 }
 
 footer {
-    position: absolute;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 0px;
     background-color: #142F44;
+    font-family: Rubik, Courier, monospace;
 }

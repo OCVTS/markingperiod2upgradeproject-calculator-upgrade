@@ -125,3 +125,26 @@ button:hover {
   color: #000000;
   text-decoration: none;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  z-index: 4;
+  transition: transform 0.5s ease;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+header a:hover {
+  transform: scale(1.5);
+}
