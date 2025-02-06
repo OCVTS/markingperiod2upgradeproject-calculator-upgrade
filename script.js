@@ -52,7 +52,7 @@ if (result.indexOf('³') >= 0) {
     document.getElementById("sec").style.textDecoration = "none";
     
 
-    //objects, arrays, and loop were copy and pasted from w3 schools so the array and cars have car-related things in them
+    //objects, arrays, and loop were copy and pasted from w3 schools so the array and cars have car related things in them
 
     //object "me"
     const car = { type: "Me", model: "500", color: "white" };
