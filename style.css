@@ -112,7 +112,7 @@ button:hover {
 }
 
 /* Secret */
-#sec {
+.sec {
   display: none;
   text-align: center;
   background-color: #979393;

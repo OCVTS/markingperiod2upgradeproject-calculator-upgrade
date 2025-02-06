@@ -46,9 +46,11 @@ if (result.indexOf('³') >= 0) {
 
   //hidden button
   // Checks if the result is the number 244, 244 is the number code for "bee", shows a link to the bee movie script (changed to rickroll keeping the same number bc i remember it)
-  if (result.indexOf("244") !== -1) {
+  if (result.indexOf("189311") !== -1) {
     //Shows the button when the code is unlocked
-    document.getElementById("sec").style.display = "block";
+    document.getElementById("sec").style.display = "block"; 
+    document.getElementById("sec").style.textDecoration = "none";
+    
 
     //objects, arrays, and loop were copy and pasted from w3 schools so the array and cars have car-related things in them
 
@@ -61,16 +63,17 @@ if (result.indexOf('³') >= 0) {
     cars[1] = "Volvo";
     cars[2] = "BMW";
 
-    //loop
+    //loop "!!!"
     const cars2 = ["!", "!", "!"];
     let cars2String = '';
     for (let i = 0; i < cars2.length; i++) {
       cars2String += cars2[i]; 
     }
     document.getElementById("sec").innerHTML = `
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <a href="https://www.youtube.com/watch?v=2qBlE2-WL60" target="_blank">
         ${cars[0]} ${car.type}${cars2String}
       </a>`;
+
   }
 
 //divide by 0 adding error
